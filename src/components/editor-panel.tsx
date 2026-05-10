@@ -11,6 +11,7 @@ import {
 import { useConfig, useConfigDispatch } from "@/lib/config-context";
 import type { ScreenshotConfig, ThemeConfig } from "@/lib/types";
 import { TEMPLATES, TEMPLATE_MAP, renderTemplate } from "@/lib/templates";
+import { img } from "@/components/slide-primitives";
 
 // ---------------------------------------------------------------------------
 // Style constants
@@ -458,7 +459,7 @@ function DropZone({
       >
         {currentSrc ? (
           <img
-            src={currentSrc}
+            src={img(currentSrc)}
             alt=""
             style={{ maxHeight: 80, maxWidth: "100%", borderRadius: 6, objectFit: "contain" }}
           />

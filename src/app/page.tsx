@@ -15,11 +15,8 @@ import { SlidePreview, PreviewCard } from "@/components/preview";
 // URL param helpers (preserves backward compat)
 // ---------------------------------------------------------------------------
 
-function resolveInitialConfig(): ScreenshotConfig {
+function resolveConfigFromParams(params: URLSearchParams): ScreenshotConfig {
   const config = structuredClone(DEFAULT_CONFIG);
-  if (typeof window === "undefined") return config;
-
-  const params = new URLSearchParams(window.location.search);
   const localeParam = params.get("locale");
   if (localeParam && config.locales.some((l) => l.code === localeParam)) {
     config.activeLocale = localeParam;
@@ -55,6 +52,10 @@ function resolveInitialConfig(): ScreenshotConfig {
   return config;
 }
 
+function resolveInitialConfig(): ScreenshotConfig {
+  return structuredClone(DEFAULT_CONFIG);
+}
+
 // ---------------------------------------------------------------------------
 // Main page component (thin orchestrator)
 // ---------------------------------------------------------------------------
@@ -81,6 +82,7 @@ type StatusState = { tone: "neutral" | "success" | "error"; message: string };
 function ScreenshotsPageInner() {
   const config = useConfig();
   const dispatch = useConfigDispatch();
+  const [urlReady, setUrlReady] = useState(false);
   const [ready, setReady] = useState(false);
   const [exporting, setExporting] = useState(false);
   const [status, setStatus] = useState<StatusState>({
@@ -88,7 +90,6 @@ function ScreenshotsPageInner() {
     message: "Inlining images for reliable exports...",
   });
   const exportRefs = useRef<Record<string, HTMLDivElement | null>>({});
-  const hydratedRef = useRef(false);
 
   const activeMockup = config.mockups.find((m) => m.id === config.activeMockupId) ?? config.mockups[0];
   const activeSize = config.sizes[config.activeSizeIndex] ?? config.sizes[0];
@@ -132,10 +133,20 @@ function ScreenshotsPageInner() {
       });
   }, [config]);
 
-  // URL sync
-  useEffect(() => { hydratedRef.current = true; }, []);
+  // Apply URL params after mount so SSR and first client render stay identical.
   useEffect(() => {
-    if (!hydratedRef.current) return;
+    const params = new URLSearchParams(window.location.search);
+    const resolved = resolveConfigFromParams(params);
+    dispatch({ type: "SET_ACTIVE_LOCALE", code: resolved.activeLocale });
+    dispatch({ type: "SET_ACTIVE_MOCKUP", id: resolved.activeMockupId });
+    dispatch({ type: "SET_ACTIVE_SIZE", index: resolved.activeSizeIndex });
+    dispatch({ type: "SET_ACTIVE_SLIDE", index: resolved.activeSlideIndex });
+    setUrlReady(true);
+  }, [dispatch]);
+
+  // URL sync
+  useEffect(() => {
+    if (!urlReady) return;
     const slide = config.slides[config.activeSlideIndex];
     const params = new URLSearchParams(window.location.search);
     params.set("locale", config.activeLocale);
@@ -143,7 +154,7 @@ function ScreenshotsPageInner() {
     params.set("size", `${activeSize.w}x${activeSize.h}`);
     if (slide) params.set("slide", slide.id);
     window.history.replaceState({}, "", `${window.location.pathname}?${params.toString()}`);
-  }, [config.activeLocale, config.activeMockupId, config.activeSlideIndex, config.slides, activeSize]);
+  }, [urlReady, config.activeLocale, config.activeMockupId, config.activeSlideIndex, config.slides, activeSize]);
 
   // REQUIREMENT: Export pipeline preserved from original implementation
   async function exportJobs(jobs: { locale: string; slideIndex: number }[], doneMessage: string) {

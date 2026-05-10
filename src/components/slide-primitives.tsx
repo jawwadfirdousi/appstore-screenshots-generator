@@ -2,12 +2,14 @@
 
 import type { CSSProperties, ReactNode } from "react";
 import type { MockupDefinition, ThemeConfig, TypographyConfig } from "@/lib/types";
+import { resolveAssetPath } from "@/lib/path-utils";
 
 // REQUIREMENT: Shared image cache for preloaded static assets
 export const imageCache: Record<string, string> = {};
 
 export function img(path: string) {
-  return imageCache[path] || path;
+  const resolved = resolveAssetPath(path);
+  return imageCache[resolved] || imageCache[path] || resolved;
 }
 
 export function SlideCanvas({

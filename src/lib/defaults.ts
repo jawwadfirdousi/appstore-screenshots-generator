@@ -4,6 +4,7 @@ import type {
   ScreenshotConfig,
   SlideConfig,
 } from "./types";
+import { resolveAssetPath } from "./path-utils";
 import contentConfig from "../../public/content/config.json";
 
 // REQUIREMENT: User-editable copy / images / locales live in
@@ -165,14 +166,14 @@ export const DEFAULT_CONFIG: ScreenshotConfig = {
 export function collectImagePaths(config: ScreenshotConfig): string[] {
   const paths = new Set<string>();
   for (const mockup of config.mockups) {
-    if (!mockup.src.startsWith("data:")) paths.add(mockup.src);
+    if (!mockup.src.startsWith("data:")) paths.add(resolveAssetPath(mockup.src));
   }
   for (const slide of config.slides) {
     for (const images of Object.values(slide.images)) {
       if (images.primary && !images.primary.startsWith("data:"))
-        paths.add(images.primary);
+        paths.add(resolveAssetPath(images.primary));
       if (images.secondary && !images.secondary.startsWith("data:"))
-        paths.add(images.secondary);
+        paths.add(resolveAssetPath(images.secondary));
     }
   }
   return Array.from(paths);
