@@ -1,0 +1,34 @@
+node_modules/
+.next/
+out/
+dist/
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Playwright
+test-results/
+playwright-report/
+coverage/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# User-uploaded content (deployments accept screenshots from end users).
+# The shared placeholder lives at /public/example-screenshot.jpg; everything
+# else under public/content/screenshots/ is per-user and stays out of git.
+public/content/screenshots/*
+!public/content/screenshots/.gitkeep

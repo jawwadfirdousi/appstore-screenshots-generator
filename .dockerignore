@@ -1,0 +1,8 @@
+node_modules
+.next
+.git
+.claude
+e2e
+test-results
+playwright-report
+*.md

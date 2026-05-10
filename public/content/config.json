@@ -1,0 +1,165 @@
+{
+  "locales": [
+    { "code": "en", "name": "English" },
+    { "code": "de", "name": "Deutsch" }
+  ],
+  "activeLocale": "en",
+  "slides": [
+    {
+      "id": "slide-1",
+      "slug": "feature-one",
+      "templateId": "dual-showcase",
+      "content": {
+        "en": {
+          "menuLabel": "01",
+          "eyebrow": "Feature One",
+          "title": ["Two phones,", "one big idea."],
+          "body": "A short sentence that sells the feature in one breath.",
+          "chips": ["Tag", "Tag", "Tag"]
+        },
+        "de": {
+          "menuLabel": "01",
+          "eyebrow": "Funktion Eins",
+          "title": ["Zwei Telefone,", "eine grosse Idee."],
+          "body": "Ein kurzer Satz, der die Funktion in einem Atemzug verkauft.",
+          "chips": ["Tag", "Tag", "Tag"]
+        }
+      },
+      "images": {
+        "en": {
+          "primary": "/example-screenshot.jpg",
+          "secondary": "/example-screenshot.jpg"
+        },
+        "de": {
+          "primary": "/example-screenshot.jpg",
+          "secondary": "/example-screenshot.jpg"
+        }
+      }
+    },
+    {
+      "id": "slide-2",
+      "slug": "feature-two",
+      "templateId": "center-stage",
+      "content": {
+        "en": {
+          "menuLabel": "02",
+          "eyebrow": "Feature Two",
+          "title": ["Centered.", "Bold.", "Clear."],
+          "body": "Describe the second value prop with no fluff and zero filler words.",
+          "chips": ["Fast", "Simple", "Yours"]
+        },
+        "de": {
+          "menuLabel": "02",
+          "eyebrow": "Funktion Zwei",
+          "title": ["Zentriert.", "Mutig.", "Klar."],
+          "body": "Beschreibt das zweite Versprechen ohne Fuellwoerter und ohne Umschweife.",
+          "chips": ["Schnell", "Einfach", "Deins"]
+        }
+      },
+      "images": {
+        "en": { "primary": "/example-screenshot.jpg" },
+        "de": { "primary": "/example-screenshot.jpg" }
+      }
+    },
+    {
+      "id": "slide-3",
+      "slug": "feature-three",
+      "templateId": "left-caption",
+      "content": {
+        "en": {
+          "menuLabel": "03",
+          "eyebrow": "Feature Three",
+          "title": ["Caption left,", "phone right."],
+          "body": "When the layout flips, the message stays sharp.",
+          "chips": ["Wide", "Calm", "Read"]
+        },
+        "de": {
+          "menuLabel": "03",
+          "eyebrow": "Funktion Drei",
+          "title": ["Text links,", "Telefon rechts."],
+          "body": "Wenn das Layout wechselt, bleibt die Botschaft scharf.",
+          "chips": ["Weit", "Ruhig", "Lesbar"]
+        }
+      },
+      "images": {
+        "en": { "primary": "/example-screenshot.jpg" },
+        "de": { "primary": "/example-screenshot.jpg" }
+      }
+    },
+    {
+      "id": "slide-4",
+      "slug": "feature-four",
+      "templateId": "right-caption",
+      "content": {
+        "en": {
+          "menuLabel": "04",
+          "eyebrow": "Feature Four",
+          "title": ["Phone left,", "caption right."],
+          "body": "Mirror the third slide and let the eye walk the page.",
+          "chips": ["Flip", "Pair", "Ship"]
+        },
+        "de": {
+          "menuLabel": "04",
+          "eyebrow": "Funktion Vier",
+          "title": ["Telefon links,", "Text rechts."],
+          "body": "Spiegele die dritte Seite, damit das Auge die Seite durchwandert.",
+          "chips": ["Drehen", "Paaren", "Senden"]
+        }
+      },
+      "images": {
+        "en": { "primary": "/example-screenshot.jpg" },
+        "de": { "primary": "/example-screenshot.jpg" }
+      }
+    },
+    {
+      "id": "slide-5",
+      "slug": "feature-five",
+      "templateId": "light-right",
+      "content": {
+        "en": {
+          "menuLabel": "05",
+          "eyebrow": "Feature Five",
+          "title": ["A lighter look,", "for contrast."],
+          "body": "Mix tones across the carousel so each slide reads on its own.",
+          "chips": ["Soft", "Bright", "Calm"]
+        },
+        "de": {
+          "menuLabel": "05",
+          "eyebrow": "Funktion Fuenf",
+          "title": ["Heller Ton,", "fuer Kontrast."],
+          "body": "Mische Tonalitaeten, damit jede Folie eigenstaendig wirkt.",
+          "chips": ["Sanft", "Hell", "Ruhig"]
+        }
+      },
+      "images": {
+        "en": { "primary": "/example-screenshot.jpg" },
+        "de": { "primary": "/example-screenshot.jpg" }
+      }
+    },
+    {
+      "id": "slide-6",
+      "slug": "feature-six",
+      "templateId": "minimal-float",
+      "content": {
+        "en": {
+          "menuLabel": "06",
+          "eyebrow": "Feature Six",
+          "title": ["Quiet finish.", "Big breathing room."],
+          "body": "Close the carousel with the most minimal layout in the set.",
+          "chips": ["Clean", "Calm", "Done"]
+        },
+        "de": {
+          "menuLabel": "06",
+          "eyebrow": "Funktion Sechs",
+          "title": ["Leiser Schluss.", "Viel Atemraum."],
+          "body": "Schliesse die Reihe mit dem minimalsten Layout im Satz ab.",
+          "chips": ["Klar", "Ruhig", "Fertig"]
+        }
+      },
+      "images": {
+        "en": { "primary": "/example-screenshot.jpg" },
+        "de": { "primary": "/example-screenshot.jpg" }
+      }
+    }
+  ]
+}
