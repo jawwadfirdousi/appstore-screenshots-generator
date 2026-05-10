@@ -29,6 +29,10 @@ npm run dev
 
 Open http://localhost:3002.
 
+You can also use the hosted app at
+https://jawwadfirdousi.github.io/appstore-screenshots-generator
+to generate screenshots without running locally.
+
 ## Customize the content
 
 ```
