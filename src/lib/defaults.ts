@@ -37,16 +37,18 @@ const IPAD_SCREEN_AREA: MockupScreenArea = {
 };
 
 const SYSTEM_THEME = {
-  accent: "#10B981",
-  accentBright: "#34D399",
+  accent: "#000000",
+  accentBright: "#ffffff",
   accentSoft: "rgba(16, 185, 129, 0.14)",
   accentPanel: "rgba(16, 185, 129, 0.22)",
-  text: "#F5FAF7",
-  textDark: "#0D1713",
-  muted: "#9EB1A8",
-  mutedDark: "#5A6A62",
+  text: "#ffffff",
+  textDark: "#700000",
+  muted: "#ffffff",
+  mutedDark: "#786868",
   line: "rgba(255, 255, 255, 0.08)",
   lineDark: "rgba(13, 23, 19, 0.10)",
+  bgTop: "#000000",
+  bgBottom: "#ffffff",
 };
 
 const SYSTEM_TYPOGRAPHY = {

@@ -159,7 +159,7 @@ for (const t of TEMPLATES) TEMPLATE_MAP[t.id] = t;
 function CenterStage({ copy, images, mockup, theme, typography, canvasWidth, canvasHeight }: TemplateRenderProps) {
   return (
     <SlideCanvas
-      background={`radial-gradient(circle at 50% 0%, ${theme.accentSoft}, transparent 40%), linear-gradient(180deg, #09140f 0%, #020504 60%, #020303 100%)`}
+      background={`radial-gradient(circle at 50% 0%, ${theme.accentSoft}, transparent 40%), linear-gradient(180deg, ${theme.bgTop} 0%, ${theme.bgBottom} 100%)`}
       width={canvasWidth}
       height={canvasHeight}
       fontFamily={typography.fontFamily}
@@ -186,7 +186,7 @@ function CenterStage({ copy, images, mockup, theme, typography, canvasWidth, can
 function DualShowcase({ copy, images, mockup, theme, typography, canvasWidth, canvasHeight }: TemplateRenderProps) {
   return (
     <SlideCanvas
-      background={`radial-gradient(circle at 50% 0%, ${theme.accentSoft}, transparent 40%), linear-gradient(180deg, #09140f 0%, #020504 60%, #020303 100%)`}
+      background={`radial-gradient(circle at 50% 0%, ${theme.accentSoft}, transparent 40%), linear-gradient(180deg, ${theme.bgTop} 0%, ${theme.bgBottom} 100%)`}
       width={canvasWidth}
       height={canvasHeight}
       fontFamily={typography.fontFamily}
@@ -221,7 +221,7 @@ function DualShowcase({ copy, images, mockup, theme, typography, canvasWidth, ca
 function RightCaption({ copy, images, mockup, theme, typography, canvasWidth, canvasHeight }: TemplateRenderProps) {
   return (
     <SlideCanvas
-      background={`radial-gradient(circle at 20% 50%, ${theme.accentSoft}, transparent 40%), linear-gradient(180deg, #0B120F 0%, #040504 58%, #020303 100%)`}
+      background={`radial-gradient(circle at 20% 50%, ${theme.accentSoft}, transparent 40%), linear-gradient(180deg, ${theme.bgTop} 0%, ${theme.bgBottom} 100%)`}
       width={canvasWidth}
       height={canvasHeight}
       fontFamily={typography.fontFamily}
@@ -248,7 +248,7 @@ function RightCaption({ copy, images, mockup, theme, typography, canvasWidth, ca
 function LeftCaption({ copy, images, mockup, theme, typography, canvasWidth, canvasHeight }: TemplateRenderProps) {
   return (
     <SlideCanvas
-      background={`radial-gradient(circle at 75% 35%, ${theme.accentSoft}, transparent 40%), linear-gradient(180deg, #0B120F 0%, #040504 58%, #020303 100%)`}
+      background={`radial-gradient(circle at 75% 35%, ${theme.accentSoft}, transparent 40%), linear-gradient(180deg, ${theme.bgTop} 0%, ${theme.bgBottom} 100%)`}
       width={canvasWidth}
       height={canvasHeight}
       fontFamily={typography.fontFamily}
@@ -303,7 +303,7 @@ function SplitVertical({ copy, images, mockup, theme, typography, canvasWidth, c
   const half = canvasWidth / 2;
   return (
     <SlideCanvas
-      background="#020504"
+      background={theme.bgBottom}
       width={canvasWidth}
       height={canvasHeight}
       fontFamily={typography.fontFamily}
@@ -349,7 +349,7 @@ function SplitVertical({ copy, images, mockup, theme, typography, canvasWidth, c
 function GradientOverlay({ copy, images, mockup, theme, typography, canvasWidth, canvasHeight }: TemplateRenderProps) {
   return (
     <SlideCanvas
-      background={`linear-gradient(180deg, #020504 0%, #09140f 40%, #020504 100%)`}
+      background={`linear-gradient(180deg, ${theme.bgBottom} 0%, ${theme.bgTop} 40%, ${theme.bgBottom} 100%)`}
       width={canvasWidth}
       height={canvasHeight}
       fontFamily={typography.fontFamily}
@@ -388,7 +388,7 @@ function GradientOverlay({ copy, images, mockup, theme, typography, canvasWidth,
 function MinimalFloat({ copy, images, mockup, theme, typography, canvasWidth, canvasHeight }: TemplateRenderProps) {
   return (
     <SlideCanvas
-      background={`linear-gradient(180deg, #050807 0%, #030706 100%)`}
+      background={`linear-gradient(180deg, ${theme.bgTop} 0%, ${theme.bgBottom} 100%)`}
       width={canvasWidth}
       height={canvasHeight}
       fontFamily={typography.fontFamily}
@@ -428,7 +428,7 @@ function MinimalFloat({ copy, images, mockup, theme, typography, canvasWidth, ca
 function BoldType({ copy, images, mockup, theme, typography, canvasWidth, canvasHeight }: TemplateRenderProps) {
   return (
     <SlideCanvas
-      background={`linear-gradient(180deg, #09140f 0%, #020504 100%)`}
+      background={`linear-gradient(180deg, ${theme.bgTop} 0%, ${theme.bgBottom} 100%)`}
       width={canvasWidth}
       height={canvasHeight}
       fontFamily={typography.fontFamily}
@@ -497,7 +497,7 @@ function BoldType({ copy, images, mockup, theme, typography, canvasWidth, canvas
 function GlassCard({ copy, images, mockup, theme, typography, canvasWidth, canvasHeight }: TemplateRenderProps) {
   return (
     <SlideCanvas
-      background={`radial-gradient(circle at 30% 40%, ${theme.accentSoft}, transparent 50%), linear-gradient(180deg, #09140f 0%, #020504 100%)`}
+      background={`radial-gradient(circle at 30% 40%, ${theme.accentSoft}, transparent 50%), linear-gradient(180deg, ${theme.bgTop} 0%, ${theme.bgBottom} 100%)`}
       width={canvasWidth}
       height={canvasHeight}
       fontFamily={typography.fontFamily}
@@ -570,7 +570,7 @@ function GlassCard({ copy, images, mockup, theme, typography, canvasWidth, canva
 function TopPhone({ copy, images, mockup, theme, typography, canvasWidth, canvasHeight }: TemplateRenderProps) {
   return (
     <SlideCanvas
-      background={`radial-gradient(circle at 50% 20%, ${theme.accentSoft}, transparent 40%), linear-gradient(180deg, #0B120F 0%, #040504 58%, #020303 100%)`}
+      background={`radial-gradient(circle at 50% 20%, ${theme.accentSoft}, transparent 40%), linear-gradient(180deg, ${theme.bgTop} 0%, ${theme.bgBottom} 100%)`}
       width={canvasWidth}
       height={canvasHeight}
       fontFamily={typography.fontFamily}
@@ -613,7 +613,7 @@ function TopPhone({ copy, images, mockup, theme, typography, canvasWidth, canvas
 function AngledDuo({ copy, images, mockup, theme, typography, canvasWidth, canvasHeight }: TemplateRenderProps) {
   return (
     <SlideCanvas
-      background={`radial-gradient(circle at 50% 50%, ${theme.accentSoft}, transparent 45%), linear-gradient(180deg, #09140f 0%, #020504 60%, #020303 100%)`}
+      background={`radial-gradient(circle at 50% 50%, ${theme.accentSoft}, transparent 45%), linear-gradient(180deg, ${theme.bgTop} 0%, ${theme.bgBottom} 100%)`}
       width={canvasWidth}
       height={canvasHeight}
       fontFamily={typography.fontFamily}

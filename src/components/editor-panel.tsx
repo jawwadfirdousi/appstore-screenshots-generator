@@ -609,6 +609,8 @@ function LocaleManager() {
 // ---------------------------------------------------------------------------
 
 const THEME_KEYS: { key: keyof ThemeConfig; label: string }[] = [
+  { key: "bgTop", label: "Background Top" },
+  { key: "bgBottom", label: "Background Bottom" },
   { key: "accent", label: "Accent" },
   { key: "accentBright", label: "Bright Accent" },
   { key: "text", label: "Text" },

@@ -11,6 +11,8 @@ export interface ThemeConfig {
   mutedDark: string;
   line: string;
   lineDark: string;
+  bgTop: string;
+  bgBottom: string;
 }
 
 export interface TypographyConfig {
